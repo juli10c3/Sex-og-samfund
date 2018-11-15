@@ -5,7 +5,7 @@ body {
 #screen {
     width: 56.25vw;
     height: 100vw;
-        background-color: green;
+    background-color: green;
     overflow: hidden;
     position: relative;
     /*  touch-action: none;*/
@@ -89,7 +89,7 @@ body {
 */
     width: 56.25vw;
     height: 100vw;
-    /*    background-image: url();*/
+    background-image: url(svgfiler/background.svg);
     background-size: 100%;
 }
 
@@ -134,22 +134,52 @@ body {
 
 .nude {
     position: absolute;
-    /*
-    width: ;
-    height: ;
-    background-image: url();
-*/
+    background-repeat: no-repeat;
+    width: 38.7vw;
+    height: 100vw;
+    background-image: url(svgfiler/nude_girl.svg);
+
     background-size: 100%;
     cursor: pointer;
+    top: 13.9vw;
+    left: 9.3vw;
 }
 
-.normal {
+.cake {
     position: absolute;
-    /*
-    width: ;
-    height: ;
-    background-image: url();
-*/
+    background-repeat: no-repeat;
+    width: 38.7vw;
+    height: 100vw;
+    background-image: url(svgfiler/cake.svg);
+
     background-size: 100%;
     cursor: pointer;
+    top: 13.9vw;
+    left: 9.3vw;
+}
+
+.happy {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 38.7vw;
+    height: 100vw;
+    background-image: url(svgfiler/happy_boy.svg);
+
+    background-size: 100%;
+    cursor: pointer;
+    top: 13.9vw;
+    left: 9.3vw;
+}
+
+.dog_filter {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 38.7vw;
+    height: 100vw;
+    background-image: url(svgfiler/dog_filter.svg);
+
+    background-size: 100%;
+    cursor: pointer;
+    top: 13.9vw;
+    left: 9.3vw;
 }

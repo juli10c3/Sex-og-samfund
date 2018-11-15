@@ -36,6 +36,7 @@ function showInfo() {
 
 function startGame() {
     console.log("startGame");
+    document.querySelector("#picture").classList = "nude";
 }
 
 function playingGame() {
