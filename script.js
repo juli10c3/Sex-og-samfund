@@ -2,6 +2,8 @@ window.addEventListener("load", sidenVises);
 
 //use strict
 //let timeLeft =
+let showSettingsEffektSound = true;
+let showSettingsMusic = true;
 
 //STARTSKÆRM START
 function sidenVises() {
@@ -26,6 +28,8 @@ function hideStart() {
     document.querySelector("#play").classList.remove("pulse");
     document.querySelector("#start").classList.add("fade_out");
     document.querySelector("#start").addEventListener("animationend", startGame);
+     document.querySelector("#sfx").addEventListener("click", toggleSounds);
+    document.querySelector("#music").addEventListener("click", toggleMusic);
 }
 
 //STARTSKÆRM SLUT
@@ -81,27 +85,62 @@ function newPic() {
 
 function toggleSounds() {
     console.log("toggleSounds");
+     if (showSettingsEffektSound == false) {
+        console.log("true");
+        showSettingsEffektSound = true;
+
+        soundsOn();
+    } else {
+        console.log("false");
+        showSettingsEffektSound = false;
+
+        soundsOff();
+    }
 }
 
 function soundsOff() {
     console.log("soundsOff");
+    document.querySelector("#sfx").classList = "sfx_off";
+//    document.querySelector("#sfx1").muted = true;
+//    document.querySelector("#sfx2").muted = true;
 }
 
 function soundsOn() {
     console.log("soundsOn");
+      document.querySelector("#sfx").classList = "sfx_on";
+//    document.querySelector("#sfx1").muted = false;
+//    document.querySelector("#sfx2").muted = false;
+
 }
 
 function toggleMusic() {
     console.log("toggleMusic");
+//       document.querySelector("#mymusic").play();
+    if (showSettingsMusic == false) {
+        console.log("true");
+        showSettingsMusic = true;
+        musicOn();
+    } else {
+        console.log("false");
+        showSettingsMusic = false;
+        musicOff();
+    }
 }
 
 function musicOff() {
     console.log("musicOff");
+      document.querySelector("#music").classList = "music_off";
+//    document.querySelector("#mymusic").muted = true;
+
 }
 
 function musicOn() {
     console.log("musicOn");
+       document.querySelector("#music").classList = "music_on";
+//    document.querySelector("#mymusic").muted = false;
+
 }
+
 
 
 //MUSIK OG LYD SLUT
