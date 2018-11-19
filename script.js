@@ -4,6 +4,8 @@ window.addEventListener("load", sidenVises);
 //let timeLeft =
 let showSettingsEffektSound = true;
 let showSettingsMusic = true;
+let points = 0;
+let life = 1;
 
 //STARTSKÆRM START
 function sidenVises() {
@@ -27,9 +29,13 @@ function hideStart() {
     document.querySelector("#play").removeEventListener("click", hideStart);
     document.querySelector("#play").classList.remove("pulse");
     document.querySelector("#start").classList.add("fade_out");
+    document.querySelector("#start").classList.add("hide");
     document.querySelector("#start").addEventListener("animationend", startGame);
-     document.querySelector("#sfx").addEventListener("click", toggleSounds);
+    document.querySelector("#sfx").addEventListener("click", toggleSounds);
     document.querySelector("#music").addEventListener("click", toggleMusic);
+    document.querySelector("#phone_btn").classList.remove("hide");
+
+
 }
 
 //STARTSKÆRM SLUT
@@ -40,52 +46,71 @@ function showInfo() {
 
 function startGame() {
     console.log("startGame");
-    document.querySelector("#picture").classList = "nude";
-}
 
-function playingGame() {
-    console.log("playingGame");
+    //    document.querySelector("#phone_btn").addEventListener("click", screenClick);
+    //    document.querySelector("#phone_btn").classList.add("pulse");
+    document.querySelector("#picture").addEventListener("click", screenClick);
+//    document.querySelector("#picture2").addEventListener("click", screenClick);
+//    document.querySelector("#picture3").addEventListener("click", screenClick);
+//    document.querySelector("#picture4").addEventListener("click", screenClick);
+
+
 }
+//
+//function playingGame() {
+//    console.log("playingGame");
+//}
 
 //FIGURELEMENTER
 function screenClick() {
     console.log("screenClick");
     if (this.classList.contains("nude")) {
-            console.log("du har klikket på nude");
+        console.log("du har klikket på nude");
 
-//            life--;
-//            console.log("life");
-//            document.querySelector("#heart" + (life + 1)).classList.add("hide");
-//            //gør at et hjerte fjernes af gangen
-//            console.log(this);
+        life--;
+        console.log("life");
+//        document.querySelector("#energy" + (life + 1)).classList.add("hide");
+        //gør at et hjerte fjernes af gangen
+        console.log(this);
+                this.classList.add("hide");
 
 
-        } else if (this.classList.contains("normal")) {
-            console.log("du har klikket på normal");
-//            points++;
-//            console.log("points");
-//            document.querySelector("#points").innerHTML = points;
-//            console.log(this);
 
-        }
-        this.classList.add("dissappear");
-        this.addEventListener("animationend", newPic);
-        gameStatus();
+    } else if (this.classList.contains("normal")) {
+        console.log("du har klikket på normal");
+        points++;
+        console.log("points");
+        document.querySelector("#points").innerHTML = points;
+        console.log(this);
+        this.classList.add("hide");
+
+
+    }
+    this.classList.add("disappear");
+    this.addEventListener("animationend", newPic);
+//    gameStatus();
 }
 
 function newPic() {
     console.log("newPic");
-        this.className = "";
+      this.className = "";
         //^betyder at klasserne forsvinder
         console.log("random");
-        this.classList.add("billeder" + Math.floor((Math.random() * 8) + 1));
+        this.classList.add("normal" + Math.floor((Math.random() * 3) + 1));
 }
-
+//    document.querySelector("#picture" + myRandom()).classList.add("normal");
+//}
+//
+//function myRandom() {
+//    console.log("my random")
+//    let tilfaeldigttal = Math.floor(Math.random() * 4) + 1;
+//    return tilfaeldigttal;
+//}
 //MUSIK OG LYD START
 
 function toggleSounds() {
     console.log("toggleSounds");
-     if (showSettingsEffektSound == false) {
+    if (showSettingsEffektSound == false) {
         console.log("true");
         showSettingsEffektSound = true;
 
@@ -101,21 +126,21 @@ function toggleSounds() {
 function soundsOff() {
     console.log("soundsOff");
     document.querySelector("#sfx").classList = "sfx_off";
-//    document.querySelector("#sfx1").muted = true;
-//    document.querySelector("#sfx2").muted = true;
+    //    document.querySelector("#sfx1").muted = true;
+    //    document.querySelector("#sfx2").muted = true;
 }
 
 function soundsOn() {
     console.log("soundsOn");
-      document.querySelector("#sfx").classList = "sfx_on";
-//    document.querySelector("#sfx1").muted = false;
-//    document.querySelector("#sfx2").muted = false;
+    document.querySelector("#sfx").classList = "sfx_on";
+    //    document.querySelector("#sfx1").muted = false;
+    //    document.querySelector("#sfx2").muted = false;
 
 }
 
 function toggleMusic() {
     console.log("toggleMusic");
-//       document.querySelector("#mymusic").play();
+    //       document.querySelector("#mymusic").play();
     if (showSettingsMusic == false) {
         console.log("true");
         showSettingsMusic = true;
@@ -129,15 +154,15 @@ function toggleMusic() {
 
 function musicOff() {
     console.log("musicOff");
-      document.querySelector("#music").classList = "music_off";
-//    document.querySelector("#mymusic").muted = true;
+    document.querySelector("#music").classList = "music_off";
+    //    document.querySelector("#mymusic").muted = true;
 
 }
 
 function musicOn() {
     console.log("musicOn");
-       document.querySelector("#music").classList = "music_on";
-//    document.querySelector("#mymusic").muted = false;
+    document.querySelector("#music").classList = "music_on";
+    //    document.querySelector("#mymusic").muted = false;
 
 }
 
@@ -147,7 +172,7 @@ function musicOn() {
 //GAMESTATUS START
 function gameStatus() {
     console.log("gameStatus");
-console.log(life);
+    console.log(life);
     if (life == 0) {
         document.querySelector("#gameover").classList.remove("hide");
     } else if (points == 7) {
@@ -168,5 +193,3 @@ function playAgain() {
 }
 
 //GAMESTATUS SLUT
-
-

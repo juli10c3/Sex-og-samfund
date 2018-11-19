@@ -45,7 +45,7 @@ body {
     }
 }
 
-.dissappear {
+.disappear {
     animation-name: disappear_kf;
     animation-duration: .5s;
     animation-iteration-count: 1;
@@ -86,6 +86,7 @@ body {
     width: 56.25vw;
     height: 100vw;
     /*    background-image: url();*/
+    background-color: aliceblue;
     background-size: 100%;
     top: 0;
     left: 0;
@@ -123,10 +124,8 @@ body {
 
 #game_background {
     position: absolute;
-    /*
     top: 0;
     left: 0;
-*/
     width: 56.25vw;
     height: 100vw;
     background-image: url(svgfiler/background.svg);
@@ -145,6 +144,20 @@ body {
     background-size: 100%;
     pointer-events: none;
 }
+
+#phone_btn {
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 77vw;
+    left: 25vw;
+    width: 7vw;
+    height: 7vw;
+    background-image: url(svgfiler/phone_button.svg);
+    background-size: 100%;
+
+}
+
+/*LYD */
 
 #sfx {
     background-repeat: no-repeat;
@@ -188,6 +201,7 @@ body {
     background-image: url(svgfiler/sound_off.svg);
 }
 
+/*GAMESTATUS*/
 #gameover {
     position: absolute;
     /*
@@ -214,6 +228,8 @@ body {
     pointer-events: none;
 }
 
+/*FIGURELEMENTER*/
+
 .nude {
     position: absolute;
     background-repeat: no-repeat;
@@ -227,7 +243,7 @@ body {
     left: 9.3vw;
 }
 
-.cake {
+.normal1 {
     position: absolute;
     background-repeat: no-repeat;
     width: 38.7vw;
@@ -240,7 +256,7 @@ body {
     left: 9.3vw;
 }
 
-.happy {
+.normal2 {
     position: absolute;
     background-repeat: no-repeat;
     width: 38.7vw;
@@ -253,7 +269,7 @@ body {
     left: 9.3vw;
 }
 
-.dog_filter {
+.normal3 {
     position: absolute;
     background-repeat: no-repeat;
     width: 38.7vw;
