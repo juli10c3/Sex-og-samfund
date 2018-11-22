@@ -85,11 +85,12 @@ body {
     position: absolute;
     width: 56.25vw;
     height: 100vw;
-    background-image: url(svgfiler/background.svg);
+    background-image: url(svgfiler/info_screen.svg);
     background-size: 100%;
     top: 0;
     left: 0;
 }
+
 #play_intro {
     position: absolute;
     background-repeat: no-repeat;

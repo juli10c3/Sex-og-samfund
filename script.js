@@ -6,7 +6,8 @@ let showSettingsEffektSound = true;
 let showSettingsMusic = true;
 let points = 0;
 let life = 1;
-let timer
+let timeCounter = 3;
+//variabler udenfor function er globale, men hvis det er inde i en function er den lokal
 
 //STARTSKÆRM START
 function sidenVises() {
@@ -67,17 +68,32 @@ function hideIntro() {
 
 function startGame() {
     console.log("startGame");
-
-
+    time();
     document.querySelector("#picture").addEventListener("click", screenClick);
+    //    tid();
 }
 
-
+//function tid() {
+//    console.log("timer");
+//    timer = setTimeout(function () {
+//
+//    }, 3000);
+//    screenClick();
+//}
 
 //FIGURELEMENTER
 function screenClick() {
-    console.log("screenClick");
-
+    //timer starter forfra
+    timeCounter = 3;
+    console.log(timeCounter);
+    //    console.log("screenClick");
+    //    if (event) {
+    //        console.log("klikket");
+    //        clearTimeout(tid);
+    //    } else {
+    //        console.log("ikke klikket");
+    //        newPic();
+    //    }
     //    console.log("timer");
     //    if () {} else if () {}
     if (this.classList.contains("type1")) {
@@ -98,7 +114,6 @@ function screenClick() {
         console.log("du har klikket på normal");
         document.querySelector("#sfx1").play();
         document.querySelector("#sfx1").currentTime = 0;
-
         console.log("points");
         points++;
         //        console.log("points");
@@ -186,18 +201,18 @@ function screenClick() {
     this.classList.add("disappear");
     this.addEventListener("animationend", newPic);
     gameStatus();
-    setTimeout(harDuKlikket, 3000);
-}
 
-function harDuKlikket() {
-    if (event) {
-        console.log("klikket");
-        clearTimeout(timer);
-    } else {
-        console.log("ikke klikket");
-        newPic();
-    }
 }
+//
+//function harDuKlikket() {
+//    if (event) {
+//        console.log("klikket");
+//        clearTimeout(timer);
+//    } else {
+//        console.log("ikke klikket");
+//        newPic();
+//    }
+//}
 
 //function newNude() {
 //
@@ -315,10 +330,6 @@ function gameStatus() {
         //        document.querySelector("#levelcomplete_music").play();
     }
     document.querySelector("#replay").addEventListener("click", restartGame);
-
-
-
-
 }
 
 
@@ -340,3 +351,38 @@ function restartGame() {
 }
 
 //GAMESTATUS SLUT
+
+
+
+
+
+//TIMER
+function time() {
+    setInterval(function () {
+        if (timeCounter === 0) {
+            newPicNoClick();
+            timeCounter = 3;
+        }
+        timeCounter--;
+        console.log(timeCounter)
+    }, 1000)
+}
+
+
+function newPicNoClick() {
+    let picture = document.querySelector('#picture');
+    picture.className = "";
+    picture.classList.add("type" + Math.floor((Math.random() * 8) + 1));
+}
+
+
+
+
+
+//setTimeout(function () {
+//    console.log("time out")
+//}, 2000)
+//
+//setInterval(function () {
+//    console.log("interval");
+//}, 2000)
