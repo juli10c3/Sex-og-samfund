@@ -99,7 +99,7 @@ body {
     background-image: url(svgfiler/playbutton.svg);
     background-size: 100%;
     left: 17vw;
-    top: 24vw;
+    top: 60vw;
 
     cursor: pointer;
 }
@@ -182,6 +182,20 @@ body {
     width: 56.25vw;
     height: 64vw;
     background-image: url(svgfiler/foreground_fingers.svg);
+    background-size: 100%;
+    pointer-events: none;
+}
+
+#chat_foreground {
+    position: absolute;
+
+    top: 48vw;
+    left: 25vw;
+
+    background-repeat: no-repeat;
+    width: 8vw;
+    height: 5vw;
+    background-image: url(svgfiler/chat_foreground.svg);
     background-size: 100%;
     pointer-events: none;
 }
@@ -303,6 +317,32 @@ body {
 }
 
 .type8 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 39vw;
+    height: 63.4vw;
+    background-image: url(svgfiler/nude_boy.svg);
+
+    background-size: 100%;
+    cursor: pointer;
+    top: 20.3vw;
+    left: 8.7vw;
+}
+
+.type9 {
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 39vw;
+    height: 63.4vw;
+    background-image: url(svgfiler/nude_girl.svg);
+
+    background-size: 100%;
+    cursor: pointer;
+    top: 20.3vw;
+    left: 8.7vw;
+}
+
+.type10 {
     position: absolute;
     background-repeat: no-repeat;
     width: 39vw;

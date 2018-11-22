@@ -1,13 +1,12 @@
 window.addEventListener("load", sidenVises);
 
-//use strict
-//let timeLeft =
+
 let showSettingsEffektSound = true;
 let showSettingsMusic = true;
 let points = 0;
 let life = 1;
-let timeCounter = 3;
-//variabler udenfor function er globale, men hvis det er inde i en function er den lokal
+let timeCounter = 2;
+//variabler udenfor function er globale, men hvis det er inde i en function er den lokal og derfor kan andre functioner ikke finde den, hvis den er lokal
 
 //STARTSKÆRM START
 function sidenVises() {
@@ -70,70 +69,42 @@ function startGame() {
     console.log("startGame");
     time();
     document.querySelector("#picture").addEventListener("click", screenClick);
-    //    tid();
+
 }
 
-//function tid() {
-//    console.log("timer");
-//    timer = setTimeout(function () {
-//
-//    }, 3000);
-//    screenClick();
-//}
+
 
 //FIGURELEMENTER
 function screenClick() {
     //timer starter forfra
-    timeCounter = 3;
+    timeCounter = 2;
     console.log(timeCounter);
-    //    console.log("screenClick");
-    //    if (event) {
-    //        console.log("klikket");
-    //        clearTimeout(tid);
-    //    } else {
-    //        console.log("ikke klikket");
-    //        newPic();
-    //    }
-    //    console.log("timer");
-    //    if () {} else if () {}
     if (this.classList.contains("type1")) {
         console.log("du har klikket på nude");
         document.querySelector("#sfx1").play();
         document.querySelector("#sfx1").currentTime = 0;
         console.log("life");
-
         life--;
-        //        console.log("life");
-        //        document.querySelector("#energy" + (life + 1));
-        //gør at et hjerte fjernes af gangenf
         console.log(this);
         this.classList.add("hide");
 
-        //        nulstil();
     } else if (this.classList.contains("type2")) {
         console.log("du har klikket på normal");
         document.querySelector("#sfx1").play();
         document.querySelector("#sfx1").currentTime = 0;
         console.log("points");
         points++;
-        //        console.log("points");
-        //        document.querySelector("#points").innerHTML = points;
         console.log(this);
         this.classList.add("hide");
-        //        nulstil();
 
     } else if (this.classList.contains("type3")) {
         console.log("du har klikket på normal");
         document.querySelector("#sfx1").play();
         document.querySelector("#sfx1").currentTime = 0;
         console.log("points");
-
         points++;
-        //        console.log("points");
-        //        document.querySelector("#points").innerHTML = points;
         console.log(this);
         this.classList.add("hide");
-        //        nulstil();
 
     } else if (this.classList.contains("type4")) {
         console.log("du har klikket på normal");
@@ -141,23 +112,17 @@ function screenClick() {
         document.querySelector("#sfx1").currentTime = 0;
         console.log("points");
         points++;
-        //        document.querySelector("#points").innerHTML = points;
         console.log(this);
         this.classList.add("hide");
-        //        nulstil();
 
     } else if (this.classList.contains("type5")) {
         console.log("du har klikket på normal");
         document.querySelector("#sfx1").play();
         document.querySelector("#sfx1").currentTime = 0;
         console.log("points");
-
         points++;
-
-        //        document.querySelector("#points").innerHTML = points;
         console.log(this);
         this.classList.add("hide");
-        //        nulstil();
 
     } else if (this.classList.contains("type6")) {
         console.log("du har klikket på normal");
@@ -165,11 +130,8 @@ function screenClick() {
         document.querySelector("#sfx1").currentTime = 0;
         console.log("points");
         points++;
-
-        //        document.querySelector("#points").innerHTML = points;
         console.log(this);
         this.classList.add("hide");
-        //        nulstil();
 
     } else if (this.classList.contains("type7")) {
         console.log("du har klikket på normal");
@@ -177,11 +139,26 @@ function screenClick() {
         document.querySelector("#sfx1").currentTime = 0;
         console.log("points");
         points++;
-
-        //        document.querySelector("#points").innerHTML = points;
         console.log(this);
         this.classList.add("hide");
-        //        nulstil();
+
+    } else if (this.classList.contains("type9")) {
+        console.log("du har klikket på nude");
+        document.querySelector("#sfx1").play();
+        document.querySelector("#sfx1").currentTime = 0;
+        console.log("life");
+        life--;
+        console.log(this);
+        this.classList.add("hide");
+
+    } else if (this.classList.contains("type10")) {
+        console.log("du har klikket på nude");
+        document.querySelector("#sfx1").play();
+        document.querySelector("#sfx1").currentTime = 0;
+        console.log("life");
+        life--;
+        console.log(this);
+        this.classList.add("hide");
 
     } else if (this.classList.contains("type8")) {
         console.log("du har klikket på nude");
@@ -189,13 +166,8 @@ function screenClick() {
         document.querySelector("#sfx1").currentTime = 0;
         console.log("life");
         life--;
-
-        //        document.querySelector("#energy" + (life + 1));
-        //gør at et hjerte fjernes af gangenf
         console.log(this);
         this.classList.add("hide");
-
-        //        nulstil();
 
     }
     this.classList.add("disappear");
@@ -203,35 +175,14 @@ function screenClick() {
     gameStatus();
 
 }
-//
-//function harDuKlikket() {
-//    if (event) {
-//        console.log("klikket");
-//        clearTimeout(timer);
-//    } else {
-//        console.log("ikke klikket");
-//        newPic();
-//    }
-//}
 
-//function newNude() {
-//
-//}
-
-//function nulstil() {
-//    console.log("nulstil");
-//    document.querySelector("#picture").removeAttribute("class");
-//    newPic();
-//    setTimeout(3000);
-//
-//}
 
 function newPic() {
     console.log("newPic");
     this.className = "";
     //^betyder at klasserne forsvinder
     console.log("random");
-    this.classList.add("type" + Math.floor((Math.random() * 8) + 1));
+    this.classList.add("type" + Math.floor((Math.random() * 10) + 1));
 }
 //    document.querySelector("#picture" + myRandom()).classList.add("type");
 //}
@@ -265,7 +216,8 @@ function soundsOff() {
     document.querySelector("#sfx1").muted = true;
     document.querySelector("#sfx2").muted = true;
     document.querySelector("#gameover_music").muted = true;
-    //    document.querySelector("#sfx2").muted = true;
+    document.querySelector("#levelcomplete_music").muted = true;
+
 }
 
 function soundsOn() {
@@ -274,8 +226,7 @@ function soundsOn() {
     document.querySelector("#sfx1").muted = false;
     document.querySelector("#sfx2").muted = false;
     document.querySelector("#gameover_music").muted = false;
-
-    //    document.querySelector("#sfx2").muted = false;
+    document.querySelector("#levelcomplete_music").muted = false;
 
 }
 
@@ -318,16 +269,15 @@ function gameStatus() {
         document.querySelector("#gameover").classList.remove("hide");
         document.querySelector("#replay").classList.remove("hide");
 
-        //        document.querySelector("#replay").classList.remove("hide");
         document.querySelector("#gameover_music").play();
         gameOver();
 
-    } else if (points == 7) {
+    } else if (points == 10) {
         document.querySelector("#levelcomplete").classList.remove("hide");
         document.querySelector("#replay").classList.remove("hide");
-        levelComplete();
+        document.querySelector("#levelcomplete_music").play();
 
-        //        document.querySelector("#levelcomplete_music").play();
+        levelComplete();
     }
     document.querySelector("#replay").addEventListener("click", restartGame);
 }
@@ -361,9 +311,11 @@ function time() {
     setInterval(function () {
         if (timeCounter === 0) {
             newPicNoClick();
-            timeCounter = 3;
+            timeCounter = 2;
+            //            hvis timecounter er 0 skal den gå til newpicnoclick function, og derefter starte fra 3 igen
         }
         timeCounter--;
+        //        hvis den ikke er nul skal den gøre dette - altså tælle ned og vise det i console
         console.log(timeCounter)
     }, 1000)
 }
@@ -372,7 +324,7 @@ function time() {
 function newPicNoClick() {
     let picture = document.querySelector('#picture');
     picture.className = "";
-    picture.classList.add("type" + Math.floor((Math.random() * 8) + 1));
+    picture.classList.add("type" + Math.floor((Math.random() * 10) + 1));
 }
 
 
